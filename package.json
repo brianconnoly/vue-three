@@ -1,6 +1,6 @@
 {
   "name": "vue-three",
-  "version": "0.0.1",
+  "version": "0.0.5a",
   "description": "Vue.js to three.js helpers",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/brianconnoly/vue-three.git"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "prepublishOnly": "webpack"
   },
   "keywords": [
     "vue",
