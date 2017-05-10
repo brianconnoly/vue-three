@@ -2,13 +2,16 @@
   "name": "vue-three",
   "version": "0.0.1",
   "description": "Vue.js to three.js helpers",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brianconnoly/vue-three.git"
+  },
+  "scripts": {
+    "postinstall": "webpack"
   },
   "keywords": [
     "vue",
@@ -19,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/brianconnoly/vue-three/issues"
   },
-  "homepage": "https://github.com/brianconnoly/vue-three#readme"
+  "homepage": "https://github.com/brianconnoly/vue-three#readme",
+  "devDependencies": {
+    "coffee-loader": "^0.7.3",
+    "coffee-script": "^1.12.5",
+    "webpack": "^2.5.1"
+  }
 }
