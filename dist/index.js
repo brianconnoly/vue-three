@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("three"));
+	else if(typeof define === 'function' && define.amd)
+		define(["three"], factory);
+	else if(typeof exports === 'object')
+		exports["vueThree"] = factory(require("three"));
+	else
+		root["vueThree"] = factory(root["THREE"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -71,9 +81,28 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = (object3d({
-  name: 'object3d'
-}));
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return object3dMixin; });
+var THREE;
+
+THREE = __webpack_require__(2);
+
+var object3dMixin = {
+  name: 'object3d',
+  template: '<div object3d><slot></slot></div>',
+  created: function() {
+    this.object = new THREE.Object3D();
+    this.scene = this.$parent.scene;
+    this.camera = this.$parent.camera;
+    this.sceneComponent = this.$parent.sceneComponent;
+    return this.object.component = this;
+  },
+  mounted: function() {
+    return this.$parent.object.add(this.object);
+  },
+  beforeDestroy: function() {
+    return this.$parent.object.remove(this.object);
+  }
+};
 
 
 /***/ }),
@@ -82,10 +111,17 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_object3d__ = __webpack_require__(0);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "object3d", function() { return __WEBPACK_IMPORTED_MODULE_0__core_object3d__["object3d"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_object3dMixin__ = __webpack_require__(0);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "object3dMixin", function() { return __WEBPACK_IMPORTED_MODULE_0__core_object3dMixin__["a"]; });
 
 
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ })
 /******/ ]);
+});

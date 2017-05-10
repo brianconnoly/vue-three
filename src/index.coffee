@@ -1,2 +1,2 @@
 
-export {object3d} from './core/object3d'
+export * from './core/object3dMixin'

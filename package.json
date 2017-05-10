@@ -1,6 +1,6 @@
 {
   "name": "vue-three",
-  "version": "0.0.5a",
+  "version": "0.0.7",
   "description": "Vue.js to three.js helpers",
   "main": "dist/index.js",
   "scripts": {
