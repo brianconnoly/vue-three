@@ -11,9 +11,13 @@ export object3dMixin = {
         @sceneComponent = @$parent.sceneComponent
         @object.component = @
 
+        if @onTick?
+            @tickHandler = @sceneComponent.onRender @onTick
+
     mounted: () ->
         @$parent.object.add @object
 
     beforeDestroy: () ->
         @$parent.object.remove @object
+        @tickHandler?()
 }
